@@ -3,8 +3,9 @@ clear;
 
 % システムの情報
 r=@(t) sin(t); %r=@(t) t;
+d=@(t) (1+t)^(-1/5)*(5-(1+t)^(
 % システムの構築
-f=@(t,x) model_3_2MRAC_outonly(t,x,r(t));
+f=@(t,x) model_4_1(t,x,r(t));
 % 微分方程式の求解
 [t,y]=ode45(f,[0 50],zeros(26,1));
 
